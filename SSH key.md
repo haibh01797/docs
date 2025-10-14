@@ -9,7 +9,7 @@
 
 4. `ls -al ~/.ssh` kiểm tra xem đã tạo thành công chưa 
 
-![](image\b.png)
+![](image/b.png)
 
 
 
