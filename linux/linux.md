@@ -44,7 +44,7 @@
 
  - ví dụ 
 
- ![](image\c.png)
+ ![](image/c.png)
  
  - d là 1 folder
  - `rwx` là quyền của user ; user có quyền r(đọc) , w(ghi) , x(thực thi)
@@ -52,7 +52,7 @@
  - `r-x` là quyền của other ; other có quyền r(đọc) , x(thực thi)
  - `root` `root` là quyền của user owner và quyền của group owner
 
- ![](image\d.png)
+ ![](image/d.png)
 
  - `-` là 1 file 
  - `rw-` là quyền của user ; user có quyền r(đọc) , w(ghi)
