@@ -84,6 +84,9 @@
 
   ![](./images/g.png)
 
+  `sudo bash -c 'iptables-save > /etc/iptables/rules.v4'` để lưu lại rule  để khi reboot sẽ ko bị mất rule
+
+
 # 3. UFW
 - UFW là giao diện dòng lệnh giúp quản lý iptables với các câu lệnh ngắn gọn , dễ nhớ hơn.
 - mục đích UFW 
@@ -111,6 +114,7 @@
 
 - `sudo ufw delete 2` xóa kết nối theo số thứ tự `sudo ufw delete allow http/80` xóa kết nối theo tên hoặc port
 - `sudo ufw status numbered` liệt kê tất cả các quy tắc tường lửa hiện tại 
+
 
 
 

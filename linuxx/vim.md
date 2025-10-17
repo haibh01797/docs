@@ -1,0 +1,10 @@
+- `i` để chèn 
+- `x` để xóa ký tự dưới con trỏ
+- `:wq` để lưu và thoát `w` lưu `q` thoát 
+- `dd` xóa và sao chép dòng hiện tại 
+- `p` dán
+- `a` chèn sau con trỏ 
+- `o` chèn 1 dòng mới sau dòng hiện tại 
+- `O` chèn 1 dòng trước dòng hiện tại 
+- `yy` sao chép dòng hiện tại
+- `:e <path/to/file> ` Mở tệp mới trong cùng cửa sổ đang dùng Vim
