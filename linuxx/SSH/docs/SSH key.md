@@ -13,13 +13,13 @@ bước 1. `ssh-keygen -t ed25519` tạo ssh key
 - `ed25519` là một loại thuật toán mã hóa khóa công khai hiện đại , nhanh hơn, nhỏ hơn và bảo mật tốt hơn
 2. `Enter file in which to save the key (/home/hailh/.ssh/id_ed25519): ` chọn nơi lưu key
 3. `Enter passphrase (empty for no passphrase):` nhập mật khẩu 
-![](./images/a.png)
+![](../image/a.png)
 - `haiuu` private key 
 - `haiuu.pub` public key
 
 4. `ls -al ~/.ssh` kiểm tra xem đã tạo thành công chưa 
 
-![](./images/b.png)
+![](../image/b.png)
 
 
 

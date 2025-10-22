@@ -1,5 +1,5 @@
-# Linux 
-## Basic commands 
+# 1. Linux 
+## 2. Basic commands 
 
 - `pwd` dùng để hiển thị thư mục mà mình đang ở 
 - `ls` dùng để hiển thị tất cả các tệp và thư mục trong thư mục hiện tại 
@@ -36,31 +36,31 @@
 - `-v` hiển thị quá trình nén và giải nén dữ liệu ra màn hình 
 - `-f` chỉ định nén thành file 
 - `--wildcards` tìm và xuất file bất kỳ trong file nén 
-- `rwx` các tệp có 3 loại quyền `r` là đọc `w` là ghi `x` là thực thi  3 quyền này được đại diện theo thứ tự : người dùng(user) nhóm(group) người dùng khác(other)
+## 2 tiến trình 
+- `top` lệnh này được sử dụng để hiển thị tất cả các tiến trình trong linux đang diễn ra môi trường làm việc của linux 
+- `bg` lệnh này điều khiển công việc giúp tiếp tục công việc đã dừng trong khi vẫn giữ công việc đó chạy ở chế độ nền 
+- `fg` lệnh này điều khiển công việc giúp tiếp tục công việc đã dừng trong khi vẫn giữ công việc đo chạy ở chế độ trước 
+- `ps` lệnh này hiển thị thông tin về các tiến trình đang chạy 
+ - ` ps aux` hiển thị tất cả tiến trình trên hệ thống 
+ - `ps -f` cung cấp các thông tin đầy đủ của tiến trình
+ - `UID` id người dùng của chủ sở hữu tiến trình 
+ - `PID` id tiến trình là mã định danh duy nhất được gán cho mỗi tiến trình đang hoạt động
+ - `PPID` id tiến trình cha hoặc ID của tiến trình đã bắt đầu của tiến trình hiện tại 
+ - `c` mức độ sử dụng cpu của tiến trình 
+ - `STIME` thời gian bắt đầu quá trình 
+ - `TTY` thiết bị đầu cuối liên quan đến quy trình 
+ - `time` thời gian cpu được quy trình sử dụng 
+- ` nice` lệnh này được dùng để bắt đầu 1 tến trình mới trong khi chỉ định giá trị ưu tiên . giá trị nằm trong khoảng -20 > 19 . -20 là mức ưu tiên cao nhất 
+- `kill` lệnh này được sử dụng để kết thúc các tiến trình linux hoặc truyền tín hiệu đến chúng . bạn có thể dừng 1 tiến tình 1 cách nhẹ nhàng hoặc ép buộc bằng cách chỉ định id `pid`
+- `df` hiển thị dung lượng đĩa trống (ổ cứng ) trên tất cả các hệ thống tệp 
+- `free` hiển thị tổng dung lượng bộ nhớ trống và đã sử dụng (Ram) trên hệ thống
 
- | rwx: | rwx: | rwx: |
- | :---| :---| :---|
- | u: | g: | o: |
-
- - ví dụ 
-
-
- ![](./images/c.png)
- 
- - d là 1 folder
- - `rwx` là quyền của user ; user có quyền r(đọc) , w(ghi) , x(thực thi)
- - `r-x` là quyền của Group ; Group có quyền r(đọc) , x(thực thi)
- - `r-x` là quyền của other ; other có quyền r(đọc) , x(thực thi)
- - `root` `root` là quyền của user owner và quyền của group owner
-
- ![](./images/d.png)
-
- - `-` là 1 file 
- - `rw-` là quyền của user ; user có quyền r(đọc) , w(ghi)
- - `r--` là quyền của Group ; Group có quyền r(đọc)
- - `r--` là quyền của other ; other có quyền r(đọc) 
-
-
+- `proc` là 1 hệ thống giả lập tập tin nó cung cấp thông tin về hệ thống , tiến trình và kernel theo thời gian thực 
+  - kiểm tra trạng thái hệ thống 
+  - xem thông tin về tiến trình (process)
+  - truy xuất thông tin kernel mà không cần dùng lệnh đặc biệt 
+  - tương tác với kernel trong 1 số trường hợp 
+  - mỗi tiến trình đang chạy sẽ có 1 thư mục con trong `/proc` với tên `PID` 
 
 
 

@@ -12,7 +12,7 @@
  | :---| :---| :---|
  | u: | g: | o: |
 
-  ![](./images/c.png)
+  ![](../image/c.png)
 
  - `d` là 1 folder
  - `b` là file kiểu khối 
@@ -27,7 +27,7 @@
 
 - `chown` lệnh nayd dùng để đổi quyền sở hữu của người dùng và nhóm đối với tệp và thư mục 
 
-  ![](./images/l.png)
+  ![](../image/l.png)
 
 - `chomd` lệnh này thay đổi quyền của tệp và thư mục 
 - `0` không được cấp quyền 
@@ -39,7 +39,7 @@
 - `6` quyền đọc viết 
 - `7` quyền đọc viết thực thi
 
-  ![](./images/t.png)
+  ![](../image/t.png)
 
 - `765` là biểu diễn số của các quyền 
 - `7` quyền đọc , viết và thực thi cho chủ sở hữu 

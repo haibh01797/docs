@@ -66,11 +66,11 @@
 - `sudo apt-get update`
 - `sudo apt-get install iptables`
 
-  ![](./images/e.png)
+  ![](../images/e.png)
 
 - `sudo iptables -L -v` dùng để kiểm tra trang thái hiện tại của iptables
 
-  ![](./images/f.png)
+  ![](../images/f.png)
 
 - thiết lập quy tắc 
 
@@ -82,7 +82,7 @@
 - lệnh này cho phép các gói tin từ địa chi ip nguồn 192.168.11.1 sẽ được chấp nhận
 - `iptables -A INPUT -s 192.168.11.2 -j DROP` các gói tin từ địa chỉ ip nguồn 192.168.11.2 sẽ bị từ chối
 
-  ![](./images/g.png)
+  ![](../images/g.png)
 
   `sudo bash -c 'iptables-save > /etc/iptables/rules.v4'` để lưu lại rule  để khi reboot sẽ ko bị mất rule
 
@@ -97,20 +97,20 @@
 - `sudo apt-get update`
 - `sudo apt-get install ufw`
 
-  ![](./images/h.png)
+  ![](../images/h.png)
 
 - `sudo ufw status` nếu như kết quả trả về là `active` thì `sudo ufw disable` để tắt tạm thời ufw
 - `sudo ufw default deny incoming` từ chối tất cả các kết nối từ bên ngoài truy cập vào máy chủ 
 - `sudo ufw default allow outgoing` cho phép kết nối từ máy chủ ra bên ngoài 
 
-  ![](./images/j.png)
+  ![](../images/j.png)
 
 - `systemctl start ufw` kích hoạt ufw
 - `sudo ufw allow 22` cho phép truy cập qua công 22 
 - `sudo ufw allow from 192.168.11.1` cho phép kết nối vào máy chủ theo địa chỉ ip
 - ` sudo ufw deny from 192.168.11.2` chặn toàn bộ lưu lượng từ địa chỉ ip
 
-  ![](./images/k.png)
+  ![](../images/k.png)
 
 - `sudo ufw delete 2` xóa kết nối theo số thứ tự `sudo ufw delete allow http/80` xóa kết nối theo tên hoặc port
 - `sudo ufw status numbered` liệt kê tất cả các quy tắc tường lửa hiện tại 
