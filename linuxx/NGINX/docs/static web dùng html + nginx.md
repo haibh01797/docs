@@ -6,7 +6,7 @@
 - `sudo mkdir -p /var/www/html1/index.html`
 - cấu hình nginx cho website
 - tạo file cấu hình 
-  ` sudo nano /etc/nginx/conf.d/web1.conf
+  ` sudo nano /etc/nginx/conf.d/web1.conf`
 
   ![](../image/w.png)
 

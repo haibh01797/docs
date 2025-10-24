@@ -8,12 +8,14 @@
 - `mysql -u hai06 -p ` để đăng nhập vào user `hai06`
 - `USE hai06` truy cập vào database
 
-  CREATE TABLE students (  
+```
+CREATE TABLE students (  
     id INT AUTO_INCREMENT PRIMARY KEY,   
     name VARCHAR(100),  
     age INT,   
     major VARCHAR(100)   
     );
+```
 
 - lệnh trên bảng students vs 4 cột
 - id : khóa chính tự động tăng 
@@ -27,12 +29,11 @@
   ![](../image/r.png)
 
 - do user `hai06` được cấp FULL quyền nên ta có thể chỉnh sửa dữ liệu trong tables
- 
-     `UPDATE students` 
-
-     `SET name = 'hai', major = 'TTS'`
-
-     `WHERE id = 1;`
+ ```
+ UPDATE students
+ SET name = 'hai', major = 'TTS'
+ WHERE id = 1;
+ ```
 
 - `SELECT * FROM students;` để xem dữ liệu đã được chỉnh sửa trong bảng 
 
@@ -42,12 +43,14 @@
 - `CREATE USER 'hailh'@'localhost' IDENTIFIED BY 'hai061205';` 
 - `GRANT CREATE ON hai06.* TO 'hailh'@'localhost';` cấp quyền tạo tables cho user `hailh` trong database `hai06`
 
-  CREATE TABLE xyz (     
+```
+CREATE TABLE xyz (     
     id INT AUTO_INCREMENT PRIMARY KEY,     
     name VARCHAR(100),     
     age INT,     
     major VARCHAR(100) 
     );
+```
 
     ![](../image/k.png)
 - đã tạo bảng thành công
@@ -56,7 +59,6 @@
     ![](../image/v.png)
 - báo lỗi do USER `hailh` chỉ được cấp quyền CREATE chứ không được cấp quyền INSERT trong database `hai06` 
  
-
 
 
 

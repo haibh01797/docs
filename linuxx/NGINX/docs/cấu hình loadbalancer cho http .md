@@ -4,13 +4,12 @@
 
 ![](../image/z.png)
 
-- upstream my_backend {
-
+```
+upstream my_backend {
     server 192.168.190.100:8081;
-
     server 192.168.190.100:8082;
-
     }
+```
 
 - đây là block upstream dùng để định nghĩa các backend server
 - nginx sử dụng round -robin để phân phối request đến các back end 

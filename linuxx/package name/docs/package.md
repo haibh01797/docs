@@ -32,71 +32,69 @@ có 2 loại gói cài đặt :
 
  lệnh apt-get được sử dụng tương tác với các gói của hệ điều hành (được chạy bởi quyền root)
 
- `apt-get install package-name Cài đặt một gói phần mềm mới từ kho lưu trữ.`
+ `apt-get install package-name` Cài đặt một gói phần mềm mới từ kho lưu trữ.
 
- `apt-get remove package-name Gỡ bỏ gói phần mềm nhưng vẫn giữ lại cấu hình (config files) `
+ `apt-get remove package-name` Gỡ bỏ gói phần mềm nhưng vẫn giữ lại cấu hình (config files) 
 
- `apt-get autoremove Tự động gỡ các gói phụ thuộc không còn cần thiết (tức là các gói đã được cài làm phụ thuộc nhưng không còn được dùng nữa).  Dọn dẹp hệ thống, tiết kiệm dung lượng.`
+ `apt-get autoremove` Tự động gỡ các gói phụ thuộc không còn cần thiết (tức là các gói đã được cài làm phụ thuộc nhưng không còn được dùng nữa).  Dọn dẹp hệ thống, tiết kiệm dung lượng.
 
- `apt-get clean Xoá toàn bộ cache của các gói .deb đã tải về nằm trong thư mục /var/cache/apt/archives . Giải phóng dung lượng ổ đĩa.`
+ `apt-get clean` Xoá toàn bộ cache của các gói .deb đã tải về nằm trong thư mục /var/cache/apt/archives . Giải phóng dung lượng ổ đĩa.
 
- `apt-get purge package-name kết hợp các chức năng của loại bỏ và làm sạch cho một gói cụ thể , cũng như các file cầu hình` 
+ `apt-get purge package-name` kết hợp các chức năng của loại bỏ và làm sạch cho một gói cụ thể , cũng như các file cầu hình
 
- `apt-get update Cập nhật danh sách gói từ các kho lưu trữ. Không cài đặt hoặc cập nhật gói, chỉ lấy thông tin mới.chạy lệnh này trước khi cài phần mềm để đảm bảo danh sách gói là mới nhất.`
+ `apt-get update` Cập nhật danh sách gói từ các kho lưu trữ. Không cài đặt hoặc cập nhật gói, chỉ lấy thông tin mới.chạy lệnh này trước khi cài phần mềm để đảm bảo danh sách gói là mới nhất.
 
- `apt-get upgrade nâng cấp tất cả gói có bản cập nhật có sẵn . chạy lệnh này sau khi chạy lệnh apt-get update. Cập nhật hệ thống, giữ nguyên cấu trúc gói đã cài `
+ `apt-get upgrade` nâng cấp tất cả gói có bản cập nhật có sẵn . chạy lệnh này sau khi chạy lệnh apt-get update. Cập nhật hệ thống, giữ nguyên cấu trúc gói đã cài `
 
  lệnh apt-cache cung cấp thêm thông tin về gói 
 
-  `apt-cache search package-name Tìm kiếm các gói có tên hoặc mô tả .sẽ liệt kê các gói có tên hoặc mô tả liên quan. dùng khi không biết tên chính xác của gói mà chỉ biết 1 phần tên hoặc chức năng`
+  `apt-cache search package-name` Tìm kiếm các gói có tên hoặc mô tả .sẽ liệt kê các gói có tên hoặc mô tả liên quan. dùng khi không biết tên chính xác của gói mà chỉ biết 1 phần tên hoặc chức năng
 
-  `apt-cache show package-name hiển thị chi tiết thông tin về gói phần mềm gồm : tên đầy đủ , phiên bản , mô tả , phụ thuộc , maintainer(người quản lý gói) muốn biết rõ về 1 gói trước khi cài đặt`
+  `apt-cache show package-name` hiển thị chi tiết thông tin về gói phần mềm gồm : tên đầy đủ , phiên bản , mô tả , phụ thuộc , maintainer(người quản lý gói) muốn biết rõ về 1 gói trước khi cài đặt
 
-  `apt-cache depends package-name hiển thị các gói phụ thuộc của gói phần mềm , muốn biết cài gói đó có kéo theo cài thêm gì không`
+  `apt-cache depends package-name` hiển thị các gói phụ thuộc của gói phần mềm , muốn biết cài gói đó có kéo theo cài thêm gì không
 
-  `apt-cache rdenends package-name hiển thị các gói nào đang dùng hoặc phụ thuộc vào gói bạn đang tra cứu `
+  `apt-cache rdenends package-name` hiển thị các gói nào đang dùng hoặc phụ thuộc vào gói bạn đang tra cứu 
 
-  `apt-cache pkgnames liệt kê toàn bộ tên các gói phần mềm hiện có trong danh sách trong apt`
+  `apt-cache pkgnames` liệt kê toàn bộ tên các gói phần mềm hiện có trong danh sách trong apt
 
  sử dụng dpkg 
 
  apt-get và apt-cache thường dễ sử dụng và kết nối đến các kho cho các công cụ quản lý gói cơ bản có tên dpkg và debconf . một số lệnh quan trọng 
 
- `dpkg -i package-file-name.deb cài đặt 1 file.deb`
+ `dpkg -i package-file-name.deb` cài đặt 1 file.deb
 
- `dpkg --list search-pattern liệt kê dach sách được cài trên hệ thống`
+ `dpkg --list search-pattern` liệt kê dach sách được cài trên hệ thống
 
-`dpkg --configure package-name cấu hình lại 1 gói đã được cài hoặc chưa cài đặt xong (dùng khi việc cài đặt bị gián đoạn , gói chưa được cấu hình hoàn chỉnh )`
+`dpkg --configure package-name` cấu hình lại 1 gói đã được cài hoặc chưa cài đặt xong (dùng khi việc cài đặt bị gián đoạn , gói chưa được cấu hình hoàn chỉnh )
 
-`dpkg -reconfigure package-name thiết lập lại cấu hình cho gói đã cài `
+`dpkg -reconfigure package-name` thiết lập lại cấu hình cho gói đã cài 
 
 ### 2.2 quản lý package fedora và centos
  
-fedora và centos là các bản phân phối liên quan mật thiết đến nhau . sự khác biệt của chúng xuất phát từ cách gói được chọn để đưa vào kho .
+- fedora và centos là các bản phân phối liên quan mật thiết đến nhau . sự khác biệt của chúng xuất phát từ cách gói được chọn để đưa vào kho .
+- cả 2 hệ thống sử dụng YUM để tương tác với kho hệ thống và cài đặt phụ thuộc và cũng bao gồm một công cụ cấp thấp hơn được gọi là rpm cho phép tương tác với tường gói .
+- công cụ YUM được phát triển cho hệ thống yellow dog linux như là 1 thay thế cho yup . yum là gói mặc định và kho lưu trữ công cụ quản lý cho 1 số hệ điều hành 
 
-cả 2 hệ thống sử dụng YUM để tương tác với kho hệ thống và cài đặt phụ thuộc và cũng bao gồm một công cụ cấp thấp hơn được gọi là rpm cho phép tương tác với tường gói .
+`yum install package-name` cài đặt 1 gói phần mềm và tự động xử lý các phụ thuộc cần thiết 
 
-công cụ YUM được phát triển cho hệ thống yellow dog linux như là 1 thay thế cho yup . yum là gói mặc định và kho lưu trữ công cụ quản lý cho 1 số hệ điều hành 
+`yum remove package-name` gỡ bỏ phần mềm và các gói phụ thuộc không cần thiết 
 
-`yum install package-name cài đặt 1 gói phần mềm và tự động xử lý các phụ thuộc cần thiết `
+`yum search search-pattenr` tìm kiếm các gói trong kho lưu trữ bằng tên mô tả có chứa từ khóa 
 
-`yum remove package-name gỡ bỏ phần mềm và các gói phụ thuộc không cần thiết `
+`yum deplist package-name` hiển thị các gói phụ thuộc cần thiết để cài đặt gói cụ thể
 
-`yum search search-pattenr tìm kiếm các gói trong kho lưu trữ bằng tên mô tả có chứa từ khóa `
+`yum check-update` kiểm tra các gói phần mềm có thể dược cập nhật
 
-`yum deplist package-name hiển thị các gói phụ thuộc cần thiết để cài đặt gói cụ thể`
+`yum info package-name` hiển thị thông tin chi tiết về 1 gói: tên phiên bản , môt tả , repo , kích thước, nhóm
 
-`yum check-update kiểm tra các gói phần mềm có thể dược cập nhật`
+`yum reinstall package-name` cài lại 1 gói đã cài đặt (nếu file lỗi /hỏng , cấu hình bị thay đổi mà muốn khôi phục bản mặc định)
 
-`yum info package-name hiển thị thông tin chi tiết về 1 gói: tên phiên bản , môt tả , repo , kích thước, nhóm`
+`yum localinstall local-rpm-file` cài đặt gói từ file .rpm có săn trên máy , đồng thời tự động xử lý phụ thuộc nếu cần thiết 
 
-`yum reinstall package-name cài lại 1 gói đã cài đặt (nếu file lỗi /hỏng , cấu hình bị thay đổi mà muốn khôi phục bản mặc định)`
+`yum update optional-package-name` cập nhật gói cụ thể lên phiên bản mới nhất trong kho 
 
-`yum localinstall local-rpm-file cài đặt gói từ file .rpm có săn trên máy , đồng thời tự động xử lý phụ thuộc nếu cần thiết `
-
-`yum update optional-package-name cập nhật gói cụ thể lên phiên bản mới nhất trong kho `
-
-`yum upgare cập nhật toàn bộ hệt thống như yum update nhưng cũng xử lý thay thế gói `
+`yum upgare` cập nhật toàn bộ hệt thống như yum update nhưng cũng xử lý thay thế gói 
 
 rpm cấc lệnh dưới đây được chạy dưới quyền user root
 
