@@ -10,7 +10,7 @@
 ## bước 2. cài đặt tiện ích mở rộng PHP 
 - `sudo apt install php8.2 php8.2-fpm php8.2-mysql -y`
 ## bước 3. cấu hình NGINX cho wordpress 
-- `sudo nano /etc/nginx/sites-available/wordpress `
+- `sudo nano /etc/nginx/sites-available/wordpress.conf `
 
      ![](../image/y.png)
 
@@ -45,7 +45,19 @@
 - `sudo nginx -t`
 - `sudo systemctl reload nginx` khởi động lại nginx 
 
-  http://web1.local
+  http://hai.local
+
+# 2. viết wordpress chạy systemđ
+## bước 1 tạo file systemd cho wordpress
+- `sudo nano /etc/systemd/system/wordpress.service`
+  
+  ![](../image/v.png)
+
+## bước 2 xem wordpress đã chạy systemd chưa
+
+![](../image/s.png)
+
+
 
 
 
