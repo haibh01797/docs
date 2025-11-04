@@ -1,6 +1,6 @@
 # tạo template theo yêu cầu 
 - thực hiện tạo template để kiểm tra dung lượng của folder và file
-## 1. tạo teplate 
+## 1. tạo templates
 trong zabbix fontend chọn `data colection` chọn `templates` chọn `create templates`
  
    ![](../image/4.png)
@@ -80,3 +80,36 @@ devops@node3:~$ stat -c%s "/etc/passwd" 2>/dev/null || echo 0
 
   ![](../image/9.png)
 - kết quả cho thấy folder `/etc` có 3953716 bytes
+## 7. tạo macros để check size folder 
+- bước 1vào `data colection` chọn `templates` nhấn vào tên `templates` đã tạo 
+
+ ![](../image/10.png)
+
+ - chọn macros 
+ - xong nhập macro 
+
+ ![](../image/11.png)
+
+ - bước 2 sau đó mình tạo item và add macros đó vào item 
+
+![](../image/12.png)
+ 
+- bước 3 tạo `trigger` 
+
+![](../image/13.png)
+
+- `name` đặt theo biến của macros  `folder {$FOLDER1}>100` 
+- `Severity` chọn mức độ cảnh báo 
+- `Expression` nếu folder của macros khai báo lớn hơn 100kb thì cảnh báo 
+
+`last(/hailh/folder.size[{$FOLDER1}])>100` 
+
+- bước 4 add templates vào host 
+
+![](../image/14.png)
+
+- sau đó ra dashboad của zabbix  để xem 
+
+![](../image/15.png)
+
+- `folder /home/devops` và `folder /var/log` đều lớn hớn 100 kb nên trigger đang cảnh báo  

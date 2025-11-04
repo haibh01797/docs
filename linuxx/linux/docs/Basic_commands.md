@@ -62,7 +62,67 @@
   - tương tác với kernel trong 1 số trường hợp 
   - mỗi tiến trình đang chạy sẽ có 1 thư mục con trong `/proc` với tên `PID` 
 
+- `snap` trong linux
+- cài đặt gói bằng `snap install <tên gói>`
+- xóa gói snap đã cài đặt `snap remove <tên gói>`
+- lấy thông tin phiên bản của bất kỳ gói snap nào `snap list`
+- cập nhật tất cả các gói đã cài đặt lên phiên bản mới nhất `snap refresh`
+- `snap revert <tên gói>` lệnh này để quay lại phiên bản cũ 
+- `snap list` để liệt kê tất cả các gói snap đã cài đtặ trong hệ thống 
+- `snap find <tên gói>` để tìm kiếm các gói trong `snap store` 
+- `snap info <tên gói>` để lấy thông tin về bất kỳ gói snap nào
+- `snap changes <tên gói>` để hiển thị danh sách các thay đổi gần đây được thực hiện đối với 1 gói trên hệ thống 
+- `snap login` để đăng nhập vào cửa hàng snap 
+- `snap logout` để đăng xuất khỏi cửa hàng snap 
+- `snap help ` để hiển thị các lệnh có sẵn của trình quản lý gói snap 
+- `snap enable ` để kích hoạt các gói snap 
+- `snap disable` để vô hiệu hóa 
+- `snap connection` để hiển thị quyền được cấp cho 1 gói snap 
 
+- `netstat` là 1 công cụ dòng lệnh để truy xuất số liệu thống kê mạng 
+  - `-a` hiển thị tất cả các kết nối tcpvaf udp đang hoạt động và các cổng đang lắng nghe 
+  - `-t` chỉ hiển thị các kết nối tcp
+  - `-u` chỉ hiển thị các kết nối udp
+  - `-l` chỉ hiển thị các socket đang lắng nghe tích cực các kết nối đến 
+  - `-p` hiển thị PID và tên chương trình liên quan đến từng ổ cắm 
+  - `-n` hiển thị địa chỉ và số cổng ở định dạng số mà không phân giải tên 
+  - `-r` hiển thị bảng định tuyến kernel 
+  - `-s` cung cấp số liệu thống kê tóm tắt cho từng giao thức 
+  - `-c` cập nhật liên tục đầu ra mỗi giây 
+  - `-e` hiển thin thông tin mở rộng bao gồm bộ đếm thời gian và id người dùng 
+
+- `fdisk` thường dùng 
+  - `n` tạo phân vùng 
+  - `p` in bảng phân vùng 
+  - `d` xóa 1 phân vùng 
+  - `q` thoát mà không lưu thay đổi 
+  - `w` ghi lại các thay đổi và thoát 
+
+- `mount` trả về các giá trị sau đây cho biết trạng thái hoàn tất 
+  - `0` thành công
+  - `1` gọi lệnh không đúng hoặc không đủ quyền 
+  - `2` lỗi hệ thống 
+  - `4` lỗi gắn kết bên trong 
+  - `8` hoạt động bị gián đoạn bởi người dùng 
+  - `16` các vấn đề liên quan đến việc ghi hoặc xóa tệp /etc/mtab
+  - `32` lỗi gắn kết 
+  - `64` ít nhất một hoạt động gắn kết thành công , nhưng không phải tất cả 
+- `mount` tùy chọn 
+  - `-a` gắn kết tất cả các hệ thống tập tin được liên kết trong /etc/fstab
+  - `-f` fork một phiên bản mới `mount` cho mỗi thiết bị . phải sử dụng kết hợp với `-a`
+  - `-h` hiển thị tệp trợ giúp với tất cả các tùy chọn 
+  - `-l` liệt kê tất cả các hệ thống tập tin đã gắn kết và thêm nhãn cho từng thiết bị 
+  - `-L`[label] gắn kết vùng với đã chỉ định [label]
+  - `-M` di chuyển một cây con đến 1 vị trí khác 
+  - `-O` [opts] khi kết hợp với `-a` lệnh này sẽ giới hạn tập hợp hệ thống tệp được `-a` áp dụng . lệnh này [opts] đề cập đến các tùy chọn được chỉ định trong trường tùy chọn của tệp 
+  `/etc/fstab` lệnh này chấp nhận nhiều tùy chọn được chỉ định trong danh sách phân cách bằng dấu phẩy 
+  - `-r` gắn kết thống tập tin ở chế độ chỉ đọc 
+  - `-R` gắn lại một cây con ở một vị trí khác , khiến nội dung của nó có sẵn ở cả hai 
+  - `-t`[type] chỉ ra loại hệ thống tập tin
+  - `-T` được sử dụng để chỉ định tệp `/etc/fstab`
+  - `-v` gắn kết một cách chi tiết mô tả từng hoạt động 
+  - `-V` hiển thị thông tin phiên bản chương trình
+  
 
 
 
