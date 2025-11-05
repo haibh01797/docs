@@ -1,0 +1,26 @@
+# shell
+- `chmod +x tên file.sh` cấp quyền thực thi
+- `./tên file.sh Ubuntu`chạy 
+- các tùy chọn trong shell
+- `-v`  bật chế độ chi tiết  in từng lệnh trước khi thực thi giúp trực quan hóa 
+- `-x` bật chế độ theo dõi in lệnh + biến mở rộng rất hữu ích khi phát hiện logic
+- `-u` phát hiện sử dụng các biến chưa được thiết lập . phát hiện lỗi khi sử dụng biến chưa được thiết lập phát hiện lỗi sớm 
+- `set` bật tắt các tùy chọn trên các phần của tập lệnh . giúp tập trung gỡ lỗi vào các phần liên quan 
+- `trap` chạy mã gỡ lỗi khi nhận đucợ tín hiệu từ bash. để kiểm tra các tập lệnh đang chạy 
+- `exec` chuyển hướng đầu ra đến 1 tập tin . ghi lại dữ liệu gỡ lỗi mà không làm lộn xộn thiết bị đầu cuối 
+- so sánh số học 
+- `-lt` <
+- `-gt` >
+- `-le`<=
+- `-ge`>=
+- `-eq`==
+- `-ne`!=
+- so sánh chuỗi 
+- `=` bằng nhau
+- `!=` ko bằng nhau 
+- `-n s1` chuỗi s1 ko rỗng
+- `-z s1` chuôĩ s1 trống 
+- `-e $file` $file tồn tại '
+- `-d $file` $file tồn tại và là 1 thư mục 
+- `-f $file` $file tồn tại và là 1 tệp thông thường 
+- `-l $file` $file tồn tại và là 1 liên kết mèm

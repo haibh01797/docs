@@ -124,6 +124,15 @@
   - `-V` hiển thị thông tin phiên bản chương trình
   
 
+## shell
+- `chmod +x tên file.sh` cấp quyền thực thi
+- `./tên file.sh Ubuntu`chạy 
+- các tùy chọn trong shell
+- `-v`  bật chế độ chi tiết 
+
+
+
+
 
 
 
