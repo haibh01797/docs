@@ -113,3 +113,15 @@ devops@node3:~$ stat -c%s "/etc/passwd" 2>/dev/null || echo 0
 ![](../image/15.png)
 
 - `folder /home/devops` và `folder /var/log` đều lớn hớn 100 kb nên trigger đang cảnh báo  
+
+
+SERVICE=nginx
+if P=$(pgrep $SERVICE)
+then
+    echo "$SERVICE is running, "
+    echo 0
+else
+    echo "$SERVICE is not running, "
+    echo 1
+fi
+exit 0

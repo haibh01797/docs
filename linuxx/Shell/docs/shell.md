@@ -24,3 +24,9 @@
 - `-d $file` $file tồn tại và là 1 thư mục 
 - `-f $file` $file tồn tại và là 1 tệp thông thường 
 - `-l $file` $file tồn tại và là 1 liên kết mèm
+
+- exit code 
+- `echo $?` để in ra exitcode của lệnh thực thi trước đó 
+- nếu lệnh trước đó fail thi exitcode > 0
+- exit code là biến có săn nên khi code shell server sẽ ko cần cho ram để chạy 
+- còn nếu viết script mà tự khai báo biến thì server phải cho 1 lượng ram nhất định để chạy
