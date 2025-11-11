@@ -6,37 +6,54 @@
 - `sudo nano /usr/local/bin/backup_mysql.sh`
 ```
 #!/bin/bash
-DB_USER="zabbix"        
-DB_PASS="password123"   
+
+# Cấu hình
+DB_USER="zabbix"
+DB_PASS="password123"
 BACKUP_DIR="/var/backups/mysql"
 LOG_FILE="/var/log/backup_mysql.log"
 DATE=$(date +"%Y-%m-%d_%H-%M-%S")
 
-TELEGRAM_BOT_TOKEN="8272516289:AAGmBMSScPXHDZvEAMh0RFoam3DPDVqLMv0"
+TELEGRAM_BOT_TOKEN="8272516289:..."
 TELEGRAM_CHAT_ID="5317144337"
 
 mkdir -p $BACKUP_DIR
 
-DATABASES=$(mysql -u $DB_USER -p$DB_PASS -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|performance_schema|mysql|sys)")
+get_databases() {
+    mysql -u $DB_USER -p$DB_PASS -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|performance_schema|mysql|sys)"
+}
 
-
-for DB_NAME in $DATABASES; do
-    BACKUP_FILE="$BACKUP_DIR/${DB_NAME}_backup_${DATE}.sql.gz"
+backup_database() {
+    local DB_NAME=$1
+    local BACKUP_FILE="$BACKUP_DIR/${DB_NAME}_backup_${DATE}.sql.gz"
     
     if mysqldump -u $DB_USER -p$DB_PASS $DB_NAME | gzip > $BACKUP_FILE; then
-       
         find $BACKUP_DIR -type f -name "${DB_NAME}_backup_*.sql.gz" -mtime +7 -delete
+        echo "$BACKUP_FILE"
+        return 0
+    else
+        return 1
+    fi
+}
+
+send_telegram() {
+    local MESSAGE="$1"
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - $MESSAGE" >> $LOG_FILE
+    curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
+        -d chat_id="$TELEGRAM_CHAT_ID" \
+        -d text="$MESSAGE"
+}
+
+DATABASES=$(get_databases)
+for DB_NAME in $DATABASES; do
+    if BACKUP_FILE=$(backup_database $DB_NAME); then
         MESSAGE="Backup database $DB_NAME thành công! File: $BACKUP_FILE"
     else
         MESSAGE="Backup database $DB_NAME thất bại!"
     fi
-
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - $MESSAGE" >> $LOG_FILE
-
-    curl -s -X POST "https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage" \
-        -d chat_id="$TELEGRAM_CHAT_ID" \
-        -d text="$MESSAGE"
+    send_telegram "$MESSAGE"
 done
+
 
 ```
 - `BACKUP_DIR` là thư mục chứa file backup
@@ -58,6 +75,8 @@ done
 - `sudo /usr/local/bin/backup_mysql.sh`
 
  ![](../image/1.png)
+
+
 
  
 
