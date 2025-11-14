@@ -39,3 +39,23 @@
 - ảo hóa mạng : openvSwitch , VMware NSX 
 - Cloud platform: openstack , cloudstack , vSphere
 
+## 7. linux namespace 
+- là 1 tính năng của linux cho phép ta tạo 1 virtualize system khá giống với chức năng của các công cụ virtual machine
+- linux namespaces sẽ bao gồm các thành phần nhỏ hơn :
+  - PID namespace cho phép ta tạo các process tách biệt 
+  - networking namespace cho phép ta chạy chương trình trên bất kì port nào mà không bị xung đột với các process khác chạy trên server 
+  - mount namespace cho phép ta mount và unmount filesystem mà không ảnh hưởng gì tới host filesystem 
+## 8. Cgroups 
+- là 1 tính năng của linux kernel cho phép quản trị viên hệ thống quản lý và giám sát tài nguyên hệ thống được sử dụng bởi nhóm tiến trình . tài nguyên bao gồm cpu , bộ nhớ , I/O đĩa và mạng 
+- các chức năng 
+- giới hạn tài nguyên : 
+  - cpu : có thể giới hạn số lượng cpu mà một nhóm tiến trình có thể sử dụng 
+  - bộ nhớ : bạn có thể giới hạn dung lượng bộ nhớ mà 1 nhóm tiến trình có thể sử dụng . nếu nhóm này sử dụng nhiều hơn dung lượng được phép hệ thống có thể giết các tiến trình để giải phóng bộ nhớ 
+  - I/O đĩa : bạn có thể giới hạn tốc độ đọc ghi I/O của đĩa mà nhóm tiến trình có thể thực hiện
+  - mạng : bạn có thể giới hạn băng thông mạng mà nhóm tiến trình có thể sử dụng 
+- cách ly tài nguyên 
+  - cgroups đảm bảo rằng tài nguyên của 1 nhóm tiến trình không bị ảnh hưởng bởi các nhóm tiến trình khác . điều này giúp duy trì hiệu suất ổn định cho các ứng dụng quan trọng
+- giám sat tài nguyên 
+ - cgroups cho phép giám sát việc sử dụng tài nguyên của các nhóm tiến trình bạn có thể kiểm tra dung lượng cpu , bộ nhớ , I/O đĩa các tiến trình đang sử dụng và đưa ra các diều chỉnh cần thiết 
+ 
+
