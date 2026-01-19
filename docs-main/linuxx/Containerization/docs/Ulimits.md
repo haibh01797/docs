@@ -1,0 +1,7 @@
+- Ulimit trong linux được sử dụng để giới hạn lượng tài nguyên hệ thống mà người dùng 
+ - các tùy chọn 
+ - `-a` để xem danh sách tất cả các giới hạn của người dùng trên hệ thống 
+ - `-u` để giới hạn số lượng tiến trình tối đa mà người dùng có thể tạo ra 
+ - `-f` cho phép chúng ta có thể giới hạn kích thước tệp mà người dùng có thể tạo 
+ - `-v` để giới hạn dung lượng bộ nhớ ảo tối đa dành cho 1 tiến trình 
+ - `-n` để giới hạn số lượng tệp mà người dùng có thể mở cùng 1 lúc 
