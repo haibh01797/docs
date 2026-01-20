@@ -190,6 +190,8 @@ docker run -d \
 - github actions chạy trên server 
 - docker build và restart app tự động 
 
+9. test 
 
+![](../docker/image/h.png)
 
 
