@@ -75,7 +75,7 @@ jobs:
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }} 
 
       # 3. Build & Push image
       - name: Build and push Docker image
@@ -193,5 +193,8 @@ docker run -d \
 9. test 
 
 ![](../docker/image/h.png)
+
+
+
 
 

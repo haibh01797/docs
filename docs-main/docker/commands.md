@@ -26,7 +26,7 @@
 - `docker inspect <container>` Kiểm tra thông tin chi tiết container
 - `docker stats` Theo dõi tài nguyên container
 - `docker exec [options] <container> <command>` Truy cập vào container đang chạy
-
+- `docker volume rm volume_name volume_name` xóa volume 
 1. Docker Client
 - Docker Client là công cụ dòng lệnh (CLI) mà bạn sử dụng hằng ngày
   - Nhận lệnh từ người dùng
